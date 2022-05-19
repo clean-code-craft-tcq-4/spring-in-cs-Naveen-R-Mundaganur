@@ -8,7 +8,7 @@ namespace Statistics
         public double Max{get;set;}
         public double Min{get;set;}
         public double Average{get;set;}
-        private int total;
+        private int sum,total_count;
         
         public Tuple<double,double,double> CalculateStatistics(List<double?> numbers) 
         {
@@ -27,9 +27,9 @@ namespace Statistics
                 foreach(var count in numbers)
                 {
                     sum+=count.Value;
-                    ++total;
+                    ++total_count;
                 }
-                Average=sum/total;
+                Average=sum/total_count;
             }
             return Tuple.Create(Min,Max,Average);
         }
