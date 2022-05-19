@@ -13,9 +13,9 @@ namespace Statistics.Test
             var computedStats = statsComputer.CalculateStatistics(
                 new List<double?>{1.5, 8.9, 3.2, 4.5});
             float epsilon = 0.001F;
-            Assert.True(Math.Abs(statsComputer.average - 4.525) <= epsilon);
-            Assert.True(Math.Abs(statsComputer.max - 8.9) <= epsilon);
-            Assert.True(Math.Abs(statsComputer.min - 1.5) <= epsilon);
+            Assert.True(Math.Abs(statsComputer.Average - 4.525) <= epsilon);
+            Assert.True(Math.Abs(statsComputer.Max - 8.9) <= epsilon);
+            Assert.True(Math.Abs(statsComputer.Min - 1.5) <= epsilon);
         }
         [Fact]
         public void ReportsNaNForEmptyInput()
