@@ -8,7 +8,8 @@ namespace Statistics
         public double Max{get;set;}
         public double Min{get;set;}
         public double Average{get;set;}
-        private int sum,total_count;
+        private int total_count;
+        private double sum;
         
         public Tuple<double,double,double> CalculateStatistics(List<double?> numbers) 
         {
