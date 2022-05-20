@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Statistics
 {
@@ -20,17 +21,10 @@ namespace Statistics
                 Average=double.NaN;
             }
             else
-            {
-                numbers.Sort();
-                Min=Convert.ToDouble(numbers[0]);
-                Max=Convert.ToDouble(numbers[numbers.Count-1]);
-                
-                foreach(var count in numbers)
-                {
-                    sum+=count.Value;
-                    ++total_count;
-                }
-                Average=sum/total_count;
+            {                
+                Min=numbers.Min(x=>x.Value);
+                Max=numbers.Max(x=>x.Value);                                
+                Average=numbers.Average(x=>x,Value);
             }
             var stats_data=Tuple.Create(Min,Max,Average);
             return stats_data;
@@ -84,9 +78,8 @@ namespace Statistics
         }
         public void checkAndAlert(List<float> data)
         {
-            data.Sort();
-            data.Reverse();
-            max_output=data[0];
+           
+            max_output=data.Max(x=>x.Value);
             if(max_output>max_threshold)
             {
                 ealt.EmailSent=true;
