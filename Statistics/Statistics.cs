@@ -9,8 +9,6 @@ namespace Statistics
         public double Max{get;set;}
         public double Min{get;set;}
         public double Average{get;set;}
-        private int total_count;
-        private double sum;
         
         public Tuple<double,double,double> CalculateStatistics(List<double?> numbers) 
         {
@@ -22,9 +20,9 @@ namespace Statistics
             }
             else
             {                
-                Min=numbers.Min(x=>x.Value);
-                Max=numbers.Max(x=>x.Value);                                
-                Average=numbers.Average(x=>x,Value);
+                Min=Convert.ToDouble(numbers.Min());
+                Max=Convert.ToDouble(numbers.Max());                                
+                Average=Convert.ToDouble(numbers.Average());
             }
             var stats_data=Tuple.Create(Min,Max,Average);
             return stats_data;
