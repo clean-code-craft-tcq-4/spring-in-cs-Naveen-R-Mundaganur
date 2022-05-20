@@ -68,7 +68,7 @@ namespace Statistics
             set => ledGlows=value;   
         }
     }
-    public class StatsAlerter:IAlerter
+    public class StatsAlerter
     {
         readonly float max_threshold;
         float max_output;
