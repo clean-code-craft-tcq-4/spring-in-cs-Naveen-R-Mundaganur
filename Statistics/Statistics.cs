@@ -11,7 +11,7 @@ namespace Statistics
         private int total_count;
         private double sum;
         
-        public void CalculateStatistics(List<double?> numbers) 
+        public Tuple<double,double,double> CalculateStatistics(List<double?> numbers) 
         {
             if(numbers.Count==0)
             {
@@ -32,6 +32,8 @@ namespace Statistics
                 }
                 Average=sum/total_count;
             }
+            var stats_data=Tuple.Create(Min,Max,Average);
+            return stats_data;
         }
     }
     public interface IAlerter
