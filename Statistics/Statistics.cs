@@ -78,8 +78,8 @@ namespace Statistics
         public StatsAlerter(float max_data, IAlerter[] ialt)
         {
             max_threshold=max_data;
-            ealt=ialt[0];
-            ledalt=ialt[1];
+            ealt=(EmailAlert)ialt[0];
+            ledalt=(LEDAlert)ialt[1];
         }
         public void checkAndAlert(List<float> data)
         {
