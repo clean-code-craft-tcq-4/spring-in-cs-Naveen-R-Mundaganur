@@ -10,7 +10,7 @@ namespace Statistics
         public double Min{get;set;}
         public double Average{get;set;}
         
-        public Tuple<double,double,double> CalculateStatistics(List<double?> numbers) 
+        public Tuple<double,double,double> CalculateStatistics(List<double> numbers) 
         {
             if(numbers.Count==0)
             {
