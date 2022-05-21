@@ -20,8 +20,8 @@ namespace Statistics
             }
             else
             {                
-                Min=Convert.ToDouble(numbers.Min());
-                Max=Convert.ToDouble(numbers.Max());                                
+                Min=numbers.Min();
+                Max=numbers.Max();                                
                 Average=Convert.ToDouble(numbers.Average());
             }
             var stats_data=Tuple.Create(Min,Max,Average);
@@ -77,7 +77,7 @@ namespace Statistics
         public void checkAndAlert(List<float> data)
         {
            
-            max_output=data.Max(x=>x.Value);
+            max_output=data.Max();
             if(max_output>max_threshold)
             {
                 ealt.EmailSent=true;
