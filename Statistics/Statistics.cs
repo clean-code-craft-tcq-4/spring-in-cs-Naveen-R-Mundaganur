@@ -12,6 +12,7 @@ namespace Statistics
         
         public Tuple<double,double,double> CalculateStatistics(List<double> numbers) 
         {
+            Tuple<double,double,double> stats_data;
             if(numbers.Count==0)
             {
                 Min=double.NaN;
@@ -24,7 +25,7 @@ namespace Statistics
                 Max=numbers.Max();                                
                 Average=Convert.ToDouble(numbers.Average());
             }
-            var stats_data=Tuple.Create(Min,Max,Average);
+            stats_data= new Tuple<double,double,double>(Min,Max,Average);
             return stats_data;
         }
     }
